@@ -1,0 +1,120 @@
+:root {
+    --container-width: clamp(0vw, 90vw, 512px);
+}
+
+html,body {
+    background-color: #FDE0A5;
+    font-family: "JetBrains Mono", monospace;
+    color: #050213;
+    font-size: 16px;
+    margin: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.container {
+    max-width: 512px;
+    width: 90vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transform: translateY(-5%);
+}
+
+.logo {
+    width: 100%;
+    padding-bottom: 100%;
+    background-image: url("Resources/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+}
+
+.title {
+    font-size: calc(var(--container-width) / 12);
+    font-weight: 800;
+    letter-spacing: 0.5em;
+    width: 100%;
+    margin-left: -100%;
+    margin-right: -100%;
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 100%, 100%, 0);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #27c691;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #27c691, 2px 2px #27c691;
+    animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    flex-wrap: nowrap;
+    max-width: 512px;
+    width: 90vw;
+    margin-top: 16px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    font-size: calc(var(--container-width) / 24);
+    color: #050213;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.links a .icon {
+    margin-right: calc(var(--container-width) / 48);
+    transition: transform 0.3s;
+}
+
+.links a:hover .icon {
+    transform: translateX(calc(var(--container-width) / -88));
+}
+
+.links a:hover .glitch {
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.links a .glitch::before,
+.links a .glitch::after {
+    color: #27c691;
+    opacity: 0;
+    z-index: -1;
+}
+
+.links a:hover .glitch::before,
+.links a:hover .glitch::after {
+    opacity: 1;
+}
