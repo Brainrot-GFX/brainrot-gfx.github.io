@@ -107,6 +107,10 @@ html,body {
     animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 
+.links a .glitch {
+    animation: none;
+}
+
 .links a .glitch::before,
 .links a .glitch::after {
     color: #27c691;
