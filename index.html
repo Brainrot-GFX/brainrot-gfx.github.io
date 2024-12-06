@@ -36,6 +36,22 @@
                 <span class="icon"><i class="fab fa-discord"></i></span>
                 <span class="glitch" data-text="Support Discord">Support Discord</span>
             </a>
+            <a href="#" class="about-button" onclick="document.getElementById('about-popup').classList.toggle('hidden')">
+                <span class="icon"><i class="fas fa-info-circle"></i></span>
+                <span class="glitch" data-text="Contact & About Us">Contact & About Us</span>
+            </a>
+        </div>
+        <div id="about-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2>About Us</h2>
+                <p>
+                    Hi there! I'm Chae, the developer behind Brainrot.<br><br>
+                    I'm a passionate games programmer specialising in crafting tools for indie developers.<br><br>
+                    Check out my <a href="https://chaes.games/" target="_blank">portfolio</a> for more information about me and my work!<br><br>
+                    If you need any assistance with anything, reach out via our <a href="https://discord.brainrot-gfx.com/" target="_blank">discord server</a> or <a href="mailto:contact@brainrot-gfx.com">contact@brainrot-gfx.com</a>.
+                </p>
+                <button class="close-popup" onclick="document.getElementById('about-popup').classList.toggle('hidden')">Close</button>
+            </div>
         </div>
     </div>
 </body>

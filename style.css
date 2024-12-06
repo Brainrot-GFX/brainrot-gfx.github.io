@@ -78,10 +78,11 @@ html,body {
     justify-content: center;
     align-items: center;
     gap: 5%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     max-width: 512px;
     width: 90vw;
     margin-top: 16px;
+    row-gap: 16px;
 }
 
 .links a {
@@ -121,4 +122,67 @@ html,body {
 .links a:hover .glitch::before,
 .links a:hover .glitch::after {
     opacity: 1;
+}
+
+.about-button {
+    display: flex;
+    align-items: center;
+    font-size: calc(var(--container-width) / 24);
+    color: #050213;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin: 0 0 10px;
+}
+
+.popup-content p {
+    margin: 10px 0;
+}
+
+.popup-content a {
+    color: #27c691;
+    text-decoration: underline;
+}
+
+.close-popup {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background: #27c691;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.close-popup:hover {
+    background: #1a9b68;
 }
